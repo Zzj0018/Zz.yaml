@@ -115,16 +115,11 @@ proxy-groups:
         ♻️ 自动选择,
         🔀负载均衡(散列),
         🔁负载均衡(轮询),
-        月付机场,
-        不限时机场,
         🇭🇰 香港节点,
         🇹🇼 台湾节点,
         🇸🇬 新加坡节点,
         🇺🇲 美国节点,
         🇯🇵 日本节点,
-        🇰🇷 韩国节点,
-        🏰 其它地区,
-        🔯 故障转移,
         🎯 全球直连,
       ]
   - name: ♻️ 自动选择
@@ -136,18 +131,9 @@ proxy-groups:
         🇸🇬 新加坡节点,
         🇺🇲 美国节点,
         🇯🇵 日本节点,
-        🇰🇷 韩国节点,
-        🏰 其它地区,
+        🔀负载均衡(散列),
+        🔁负载均衡(轮询),
       ]
-  - name: 月付机场
-    type: select
-    use:
-      - month
-
-  - name: 不限时机场
-    type: select
-    use:
-      - year
 
   - name: 🔀负载均衡(散列)
     type: load-balance
@@ -156,7 +142,7 @@ proxy-groups:
     strategy: consistent-hashing
     lazy: true
     include-all-providers: true
-    filter: "🇭🇰|港|HK|hk|Hong Kong|HongKong|hongkong|HKG"
+    filter: "🇭🇰|港|Hong Kong|HongKong|hongkong|HKG"
 
   - name: 🔁负载均衡(轮询)
     type: load-balance
@@ -165,93 +151,185 @@ proxy-groups:
     strategy: round-robin
     lazy: true
     include-all-providers: true
-    filter: "🇭🇰|港|HK|hk|Hong Kong|HongKong|hongkong|HKG"
+    filter: "🇭🇰|港|Hong Kong|HongKong|hongkong|HKG"
 
-  - name: 💬 OpenAi
+  - name: 🍎 苹果服务
     type: select
     proxies:
       [
-        ♻️ 自动选择,
+        🚀 手动切换,
         🇭🇰 香港节点,
         🇹🇼 台湾节点,
         🇸🇬 新加坡节点,
         🇺🇲 美国节点,
         🇯🇵 日本节点,
-        🇰🇷 韩国节点,
-        🏰 其它地区,
-        🔯 故障转移,
         🎯 全球直连,
       ]
 
-  - name: 📺 国外媒体
+  - name: 📹 油管视频
     type: select
     proxies:
       [
-        ♻️ 自动选择,
+        🚀 手动切换,
+        🔀负载均衡(散列),
+        🔁负载均衡(轮询),
         🇭🇰 香港节点,
         🇹🇼 台湾节点,
         🇸🇬 新加坡节点,
         🇺🇲 美国节点,
         🇯🇵 日本节点,
-        🇰🇷 韩国节点,
-        🏰 其它地区,
-        🔯 故障转移,
         🎯 全球直连,
       ]
 
-  - name: 🔯 故障转移
-    type: fallback
-    url: "https://www.gstatic.com/generate_204"
-    interval: 300
-    include-all-providers: true
+  - name: ♻️Disney+
+    type: select
+    proxies:
+      [
+        🚀 手动切换,
+        🔀负载均衡(散列),
+        🔁负载均衡(轮询),
+        🇭🇰 香港节点,
+        🇹🇼 台湾节点,
+        🇸🇬 新加坡节点,
+        🇺🇲 美国节点,
+        🇯🇵 日本节点,
+        🎯 全球直连,
+      ]
+      
+  - name: 🎵 TikTok
+    type: select
+    proxies:
+      [
+        🚀 手动切换,
+        🔀负载均衡(散列),
+        🔁负载均衡(轮询),
+        🇭🇰 香港节点,
+        🇹🇼 台湾节点,
+        🇸🇬 新加坡节点,
+        🇺🇲 美国节点,
+        🇯🇵 日本节点,
+        🎯 全球直连,
+      ]
 
+  - name: 🎥 奈飞视频
+    type: select
+    proxies:
+      [
+        🚀 手动切换,
+        🔀负载均衡(散列),
+        🔁负载均衡(轮询),
+        🇭🇰 香港节点,
+        🇹🇼 台湾节点,
+        🇸🇬 新加坡节点,
+        🇺🇲 美国节点,
+        🇯🇵 日本节点,
+        🎯 全球直连,
+      ]
+
+    - name: 📲 电报消息
+    type: select
+    proxies:
+      [
+        🚀 手动切换,
+        🔀负载均衡(散列),
+        🔁负载均衡(轮询),
+        🇭🇰 香港节点,
+        🇹🇼 台湾节点,
+        🇸🇬 新加坡节点,
+        🇺🇲 美国节点,
+        🇯🇵 日本节点,
+        🎯 全球直连,
+      ]
+
+  - name: 🇭🇰 myTVsuper
+    type: select
+    proxies:
+      [
+        🚀 手动切换,
+        🔀负载均衡(散列),
+        🔁负载均衡(轮询),
+        🇭🇰 香港节点,
+        🇹🇼 台湾节点,
+        🇸🇬 新加坡节点,
+        🇺🇲 美国节点,
+        🇯🇵 日本节点,
+        🎯 全球直连,
+      ]
+      
+  - name: 🎵 TikTok
+    type: select
+    proxies:
+      [
+        🚀 手动切换,
+        🔀负载均衡(散列),
+        🔁负载均衡(轮询),
+        🇭🇰 香港节点,
+        🇹🇼 台湾节点,
+        🇸🇬 新加坡节点,
+        🇺🇲 美国节点,
+        🇯🇵 日本节点,
+        🎯 全球直连,
+      ]
+
+  - name: 🎥 奈飞视频
+    type: select
+    proxies:
+      [
+        🚀 手动切换,
+        🔀负载均衡(散列),
+        🔁负载均衡(轮询),
+        🇭🇰 香港节点,
+        🇹🇼 台湾节点,
+        🇸🇬 新加坡节点,
+        🇺🇲 美国节点,
+        🇯🇵 日本节点,
+        🎯 全球直连,
+      ]
   - name: 🇭🇰 香港节点
-    type: select
+    <<: *auto-test
     include-all-providers: true
     filter: "🇭🇰|港|HK|hk|Hong Kong|HongKong|hongkong|HKG"
 
   - name: 🇹🇼 台湾节点
-    type: select
+    <<: *auto-test
     include-all-providers: true
     filter: "🇹🇼|台湾|台北|TW|🇹🇼|Taiwan|新北|彰化"
 
   - name: 🇯🇵 日本节点
-    type: select
+    <<: *auto-test
     include-all-providers: true
     filter: "🇯🇵|日本|川日|东京|大阪|泉日|埼玉|沪日|深日|[^-]日|JP|Japan"
 
   - name: 🇸🇬 新加坡节点
-    type: select
+    <<: *auto-test
     include-all-providers: true
     filter: "新加坡|🇸🇬|SG|Singapore|坡|狮城"
 
-  - name: 🇰🇷 韩国节点
-    type: select
-    include-all-providers: true
-    filter: "韩国|韩|KR|🇰🇷|Korea|KOR|首尔|韓"
-
   - name: 🇺🇲 美国节点
-    type: select
+    <<: *auto-test
     include-all-providers: true
     filter: "美|波特兰|达拉斯|俄勒冈|凤凰城|费利蒙|硅谷|拉斯维加斯|洛杉矶|圣何塞|圣克拉拉|西雅图|芝加哥|US|United States|ATL|BUF|DFW|EWR|IAD"
-
-  - name: 🏰 其它地区
-    type: select
-    include-all-providers: true
-    filter: "(?i)^(?!.*(?:🇭🇰|🇯🇵|🇺🇸|🇸🇬|🇨🇳|港|hk|hongkong|台|tw|taiwan|日|jp|japan|新|sg|singapore|美|us|unitedstates)).*"
 
   - name: 🎯 全球直连
     type: select
     proxies:
       - DIRECT
-
+      
+  - name: 🐟 漏网之鱼
+    type: select
+    proxies:
+      [
+        🚀 手动切换,
+        🔀负载均衡(散列),
+        🔁负载均衡(轮询),
+        🇭🇰 香港节点,
+        🇹🇼 台湾节点,
+        🇸🇬 新加坡节点,
+        🇺🇲 美国节点,
+        🇯🇵 日本节点,
+        🎯 全球直连,
+      ]
 rule-providers:
-  reject:
-    type: http
-    behavior: domain
-    url: "https://cdn.jsdelivr.net/gh/Loyalsoldier/clash-rules@release/reject.txt"
-    path: ./ruleset/reject.yaml
-    interval: 86400
 
   icloud:
     type: http
@@ -351,13 +429,6 @@ rule-providers:
     path: ./ruleset/applications.yaml
     interval: 86400
 
-  bilibili:
-    type: http
-    behavior: classical
-    url: "https://raw.githubusercontent.com/ACL4SSR/ACL4SSR/master/Clash/Ruleset/BilibiliHMT.list"
-    path: ./ruleset/applications.yaml
-    interval: 86400
-
   netflix:
     type: http
     behavior: classical
@@ -365,24 +436,62 @@ rule-providers:
     path: ./ruleset/applications.yaml
     interval: 86400
 
+  Telegram:
+    type: http
+    behavior: classical
+    url: http://127.0.0.1:25500/getruleset?type=6&url=aHR0cHM6Ly9yYXcuZ2l0aHVidXNlcmNvbnRlbnQuY29tL0FDTDRTU1IvQUNMNFNTUi9tYXN0ZXIvQ2xhc2gvVGVsZWdyYW0ubGlzdA
+    path: ./providers/rule-provider_Telegram.yaml
+    interval: 86400
+    
+  MyTVSuper:
+    type: http
+    behavior: classical
+    url: http://127.0.0.1:25500/getruleset?type=6&url=aHR0cHM6Ly9yYXcuZ2l0aHVidXNlcmNvbnRlbnQuY29tL0FDTDRTU1IvQUNMNFNTUi9tYXN0ZXIvQ2xhc2gvUnVsZXNldC9NeVRWU3VwZXIubGlzdA
+    path: ./providers/rule-provider_MyTVSuper.yaml
+    interval: 86400
+    
+  Disney:
+    type: http
+    behavior: classical
+    url: http://127.0.0.1:25500/getruleset?type=6&url=aHR0cHM6Ly9yYXcuZ2l0aHVidXNlcmNvbnRlbnQuY29tL0FDTDRTU1IvQUNMNFNTUi9tYXN0ZXIvQ2xhc2gvUnVsZXNldC9EaXNuZXkubGlzdA
+    path: ./providers/rule-provider_Disney.yaml
+    interval: 86400
+    
+  TikTok:
+    type: http
+    behavior: classical
+    url: http://127.0.0.1:25500/getruleset?type=6&url=aHR0cHM6Ly9yYXcuZ2l0aHVidXNlcmNvbnRlbnQuY29tL0FDTDRTU1IvQUNMNFNTUi9tYXN0ZXIvQ2xhc2gvUnVsZXNldC9UaWtUb2subGlzdA
+    path: ./providers/rule-provider_TikTok.yaml
+    interval: 86400
+    
+  YouTube:
+    type: http
+    behavior: classical
+    url: http://127.0.0.1:25500/getruleset?type=6&url=aHR0cHM6Ly9yYXcuZ2l0aHVidXNlcmNvbnRlbnQuY29tL0FDTDRTU1IvQUNMNFNTUi9tYXN0ZXIvQ2xhc2gvUnVsZXNldC9Zb3VUdWJlLmxpc3Q
+    path: ./providers/rule-provider_YouTube.yaml
+    interval: 86400
+
 rules:
   - RULE-SET,applications,🎯 全球直连
   - DOMAIN,clash.razord.top,🎯 全球直连
   - DOMAIN,yacd.haishan.me,🎯 全球直连
   - RULE-SET,private,🎯 全球直连
-  - RULE-SET,othervideo,📺 国外媒体
-  - RULE-SET,netflix,📺 国外媒体
-  - RULE-SET,bilibili,📺 国外媒体
+  - RULE-SET,Apple,🍎 苹果服务
+  - RULE-SET,Telegram,📲 电报消息
+  - RULE-SET,MyTVSuper,🇭🇰 myTVsuper
+  - RULE-SET,Disney,♻️Disney+
+  - RULE-SET,TikTok,🎵 TikTok
+  - RULE-SET,YouTube,📹 油管视频
+  - RULE-SET,netflix,🎥 奈飞视频
   - RULE-SET,openai,💬 OpenAi
-  # - RULE-SET,reject,REJECT
   - RULE-SET,icloud,🎯 全球直连
-  - RULE-SET,apple,🎯 全球直连
   - RULE-SET,google,🚀 手动切换
   - RULE-SET,proxy,🚀 手动切换
+  - RULE-SET,othervideo,📺 国外媒体
   - RULE-SET,direct,🎯 全球直连
   - RULE-SET,lancidr,🎯 全球直连
   - RULE-SET,cncidr,🎯 全球直连
   - RULE-SET,telegramcidr,🚀 手动切换
   - GEOIP,LAN,🎯 全球直连
-  - GEOIP,CN,🎯 全球直连
-  - MATCH,🚀 手动切换
+  - GEOIP,CN,🎯 全球直连,no-resolve
+  - MATCH,🐟 漏网之鱼
