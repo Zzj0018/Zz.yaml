@@ -18,7 +18,7 @@ proxy-providers:
   month:
     type: http
     url: "机场地址1"
-    path: ./proxy/month.yaml
+    path: ./proxy/year.yam
     override:
       udp: true
     <<: *my-check
@@ -26,11 +26,19 @@ proxy-providers:
   year:
     type: http
     url: "机场地址2"
-    path: ./proxy/year.yaml
+    path: ./proxy/year2.yaml
     override:
       udp: true
     <<: *my-check
 
+  year:
+    type: http
+    url: "机场地址2"
+    path: ./proxy/year3.yaml
+    override:
+      udp: true
+    <<: *my-check
+    
 port: 7890
 socks-port: 7891
 mixed-port: 2333
